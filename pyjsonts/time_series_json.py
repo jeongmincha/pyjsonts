@@ -66,7 +66,7 @@ class TimeSeriesJSON:
 
     def get_time_dist(self, base_timestamp, interval, num_bins):
         dist = np.array([[0, ]] * num_bins)
-        timestamps = self.get_dict_time_freq()
+        timestamps = self.get_dict_time_freq(base_timestamp, interval)
 
         for idx in range(num_bins):
             if idx in timestamps:
