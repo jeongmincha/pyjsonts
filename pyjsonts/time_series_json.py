@@ -28,9 +28,9 @@ class TimeSeriesJSON:
 
         objs = ijson.items(self.__file, tag)
         for obj in objs:
-            item = json.dumps(obj, \
-                              sort_keys=True, \
-                              indent=4, \
+            item = json.dumps(obj,
+                              sort_keys=True,
+                              indent=4,
                               ensure_ascii=True)
             self.__items.append(item)
             cnt += 1
