@@ -1,5 +1,6 @@
 import json
 import ijson
+import numpy as np
 
 
 class TimeSeriesJSON:
@@ -38,3 +39,19 @@ class TimeSeriesJSON:
                 break
 
         return self.__items
+
+    def get_timestamp_list(self):
+        return []
+
+    def get_dict_time_freq(self):
+        return {}
+
+    def get_time_dist(self, base_timestamp, interval, num_bins):
+        dist = np.array([[0, ]] * num_bins)
+        timestamps = self.get_dict_time_freq()
+
+        for idx in range(num_bins):
+            if idx in timestamps:
+                dist[idx] = timestamps[idx]
+
+        return dist
