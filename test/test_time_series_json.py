@@ -1,11 +1,14 @@
 import unittest
 from pyjsonts.time_series_json import TimeSeriesJSON
 
+test_json = TimeSeriesJSON('./test_json.json')
+
 
 class TestTimeSeriesJSON(unittest.TestCase):
 
-    def __init__(self):
-        test_json = TimeSeriesJSON('./test_json.json')
+    def test_parse_json_items(self):
+        items = self.test_json.parse_json_items()
+        self.assertTrue(len(items), 9)
 
 if __name__ == '__main__':
     unittest.main()
