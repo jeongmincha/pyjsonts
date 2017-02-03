@@ -1,6 +1,7 @@
 import json
 import ijson
 
+
 class TimeSeriesJSON:
 
     def __init__(self, f=None, fn=None, tag='item'):
