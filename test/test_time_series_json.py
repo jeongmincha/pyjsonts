@@ -1,7 +1,7 @@
 import unittest
 from pyjsonts.time_series_json import TimeSeriesJSON
 
-test_json = TimeSeriesJSON('./test_json.json')
+test_json = TimeSeriesJSON(fn='test/test_json.json')
 
 
 class TestTimeSeriesJSON(unittest.TestCase):
