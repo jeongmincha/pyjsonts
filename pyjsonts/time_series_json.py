@@ -40,8 +40,14 @@ class TimeSeriesJSON:
 
         return self.__items
 
-    def get_timestamp_list(self):
-        return []
+    def get_timestamp_list(self, timestamp_tag='timestamp'):
+        timestamps = []
+
+        for elem in self.__items:
+            timestamp = elem[timestamp_tag]
+            timestamps.append(timestamp)
+
+        return timestamps
 
     def get_dict_time_freq(self, base_timestamp, interval):
         freq_d = {}
