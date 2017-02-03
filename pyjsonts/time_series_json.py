@@ -43,8 +43,20 @@ class TimeSeriesJSON:
     def get_timestamp_list(self):
         return []
 
-    def get_dict_time_freq(self):
-        return {}
+    def get_dict_time_freq(self, base_timestamp, interval):
+        freq_d = {}
+        timestamps = self.get_timestamp_list()
+
+        for timestamp in timestamps:
+            diff = timestamp - base_timestamp
+            idx = diff / interval
+
+            if idx in freq_d:
+                freq_d[idx] += 1
+            else:
+                freq_d[idx] = 1
+
+        return freq_d
 
     def get_time_dist(self, base_timestamp, interval, num_bins):
         dist = np.array([[0, ]] * num_bins)
