@@ -33,7 +33,7 @@ class TimeSeriesJSON:
                               sort_keys=True,
                               indent=4,
                               ensure_ascii=True)
-            self.__items.append(item)
+            self.__items.append(json.loads(item))
             cnt += 1
             if limit != 0 and cnt >= limit:
                 break
